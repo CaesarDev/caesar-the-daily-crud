@@ -7,9 +7,10 @@ Navigate to the repository in your terminal. Run ```composer install```
 
 
 ### Make sure that the database connection is set up correctly.
-The daily Crud is using the [`sqlite3`](https://www.sqlite.org/) database engine.
+The daily Crud is using the [`sqlite`](https://www.sqlite.org/) database engine.
 The database is set up in the .env file. The location of the database is /database/database.sqlite
-Make sure that the path in .env is correct.
+Make sure that the path in .env is correct by adding the absolute path For example 
+/Users/Ola/Code/caesar-the-daily-crud/database/database.sqlite
 
 ### Run the migrations
 Run the migrations in order to seed the data. ```php artisan migrate```
@@ -34,8 +35,7 @@ The expectation is not to complete all tasks. We value one good solution over ma
 - [ ] Add vote buttons and count to the view
 - [ ] Make sure that voting works
 - [ ] BONUS: Add rate limit to the voting system, on visitor can only cast one vote per hour.
-
-  
+<br> <br> <br> 
 
 2. In most newspapers, the articles are sorted by date, latest first. This is NOT a normal newspaper.
 The Daily Crud sorts the articles by amount of characters in the body field, posts with more characters are shown first.
@@ -44,6 +44,8 @@ I.e "This is a longer sentence" will be seen above "Short short"
 - [ ] Add a scope to the Post model to sort by body length
 - [ ] Use the scope in the PostsController to sort the posts
 - [ ] BONUS: Add a button on the main posts page to sort by date instead
+<br> <br> <br> 
+
 
 3. Add a search function to the posts. Users should be able to search for a specific post by title.
     Suggested steps:
