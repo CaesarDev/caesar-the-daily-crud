@@ -24,7 +24,7 @@ Navigate to http://127.0.0.1:8000/posts/create and make sure that you can post n
 
 
 ## The tasks
-The expectation is not to complete all tasks. We value one good solution over many worse ones.
+The expectation is not to complete all tasks. We value one good solution over many worse ones. Pick one to start
 
 1. Add voting to the posts. Every post should have a vote up and vote down button and also a count of votes.   
     Suggested steps:
@@ -32,8 +32,8 @@ The expectation is not to complete all tasks. We value one good solution over ma
 - [ ] Create VotesController and related functions
 - [ ] Add routes to routes/web.php
 - [ ] Add vote buttons and count to the view
-- [ ] Make sure taht voting works
-- [ ] BONUS: Add rate limiting to the voting system
+- [ ] Make sure that voting works
+- [ ] BONUS: Add rate limit to the voting system, on visitor can only cast one vote per hour.
 
   
 
