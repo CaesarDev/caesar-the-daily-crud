@@ -2,6 +2,10 @@
 
 ## Getting set up
 
+### Install Composer dependencies
+Navigate to the repository in your terminal. Run ```composer install```
+
+
 ### Make sure that the database connection is set up correctly.
 The daily Crud is using the [`sqlite3`](https://www.sqlite.org/) database engine.
 The database is set up in the .env file. The location of the database is /database/database.sqlite
