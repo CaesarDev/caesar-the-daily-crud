@@ -54,3 +54,9 @@ I.e "This is a longer sentence" will be seen above "Short short"
 - [ ] Add the search form to the view
 - [ ] Add a view to present the search results
 - [ ] BONUS: Add the ability to search both title and body
+
+## Laracasts
+The Laracast series "Laravel 8 From Scratch" are related to the tasks and we recommend that you watch 
+them before taking on the task.
+
+
