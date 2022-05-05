@@ -24,7 +24,16 @@ Navigate to the site in your browser, using the url given when running ```php ar
 Navigate to http://127.0.0.1:8000/posts/create and make sure that you can post new Posts.
 
 
-## The tasks
+## Tasks - Round 2
+### Add an author to the posts
+Each post should belong to an author.   
+
+Part 1: The currently logged on user should be set as the author when creating a new post.  
+
+Part 2: The author should be able to be selected from a ```<select>``` element when creating a 
+new post.
+
+## Tasks - Round 1
 The expectation is not to complete all tasks. We value one good solution over many worse ones. Pick one to start
 
 1. Add voting to the posts. Every post should have a vote up and vote down button and also a count of votes.   
