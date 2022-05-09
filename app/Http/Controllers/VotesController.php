@@ -2,75 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 
 class VotesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function store(Request $request, Post $post)
     {
-        //
+
+        $vote = new Vote();
+
+        $post->votes()->save($vote);
+
+        return redirect()->route('votes.thank-you', $vote);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function show(Vote $vote)
     {
-        //
+        return view('votes.thank-you', [
+            'vote' =>$vote
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Votes $vote)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Votes $vote)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Votes $vote)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

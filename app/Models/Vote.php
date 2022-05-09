@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Vote extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['id', 'votes'];
+
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
+
 }
