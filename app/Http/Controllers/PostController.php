@@ -11,17 +11,31 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('body', 'ASC', 'str')->get();
+        $posts = Post::orderBy('body', 'ASC', 'str')->published()->get();
 
 
 
         return view('posts.index',[
-            'posts' => $posts
-
+            'posts' => $posts,
+            'unpublished' => false
         ]);
 
 
     }
+
+
+    public function indexAll()
+    {
+
+
+        $posts = Post::all();
+
+        return view('posts.index', [
+            'posts' => $posts,
+            'unpublished' => true
+        ]);
+    }
+
 
     public function show(Post $post) {
         /*dd($post);*/

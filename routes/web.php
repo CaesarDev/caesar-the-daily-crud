@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,16 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
+Route::get('/unpublished', [PostController::class, 'indexAll'])->name('posts.all');
 
-Route::get('posts/create', [\App\Http\Controllers\PostController::class, 'create'])->name('posts.create');
-Route::post('posts/create', [\App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
+Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('posts/create', [PostController::class, 'store'])->name('posts.store');
 
-Route::get('/search/', [\App\Http\Controllers\PostController::class, 'search'])->name('search');
-Route::post('/search/', [\App\Http\Controllers\PostController::class, 'searchResults'])->name('posts.search');
+Route::get('/search/', [PostController::class, 'search'])->name('search');
+Route::post('/search/', [PostController::class, 'searchResults'])->name('posts.search');
 
-Route::get('posts/{post}', [\App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
+Route::get('posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/votes/{post}', [\App\Http\Controllers\VotesController::class, 'store'])->name('votes.store');
 Route::get('/votes/{vote}/thank-you', [\App\Http\Controllers\VotesController::class, 'show'])->name('votes.thank-you');

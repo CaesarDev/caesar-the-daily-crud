@@ -18,9 +18,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'id', 'title', 'body', 'status'
-    ];
+
     /**
      * Scope a query to only include popular users.
      *
@@ -34,6 +32,11 @@ class Post extends Model
             $post->orderBy('body')
         }])
     }*/
+
+    public function scopePublished($query)
+    {
+        return $query->whereNotNull('published_at');
+    }
 
     public function votes()
     {

@@ -2,6 +2,15 @@
 <link rel="stylesheet" href="/app.js"">
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+@if($unpublished)
+    <a href="{{ route('posts.index') }}" class="voteButton" role="button">published</a>
+@else
+    <a href="{{ route('posts.all') }}" class="voteButton" role="button">unpublished</a>
+@endif
+
+
 @forelse($posts as $post)
 <h2>
     <a href="/posts/<?= $post->id; ?>"><?= $post->title; ?></a>
